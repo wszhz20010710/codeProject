@@ -1,8 +1,10 @@
-//c++中的结构体
+// c++中的结构体
 #include <iostream>
 
 using namespace std;
-struct inflatable
+struct inflatable 
+// 结构体放在main()函数前面，外部变量，全局都可使用
+// 尽量使用局部变量、外部结构体
 {
     char name[20];
     float volume;
@@ -27,6 +29,10 @@ int main()
 
     cout << "Expand your guest list with " << guest.name;
     cout << " and " << pal.name << "!\n";
+
+    cout << guest.name << "'s volume is " << guest.volume << endl;
+    cout << pal.name << "'s volume is " << pal.volume << endl;
+
 
     cout << "You can have both for $";
     cout << guest.price + pal.price << "!\n";
