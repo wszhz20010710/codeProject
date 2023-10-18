@@ -6,7 +6,7 @@ const int ArSize = 16;
 
 int main(){
     long long product[ArSize];
-    product[1] = product[0] = 1LL;
+    product[1] = product[0] = 1LL;// long long型的1
     for (int i = 2; i < ArSize; i++)
     {
         product[i] = i * product[i-1];
