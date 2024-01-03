@@ -26,7 +26,7 @@ def motion_filter(img, K_size = 3):
     
     return out
 
-pic = cv2.imread("D:\\codeProject\\Python\\ImageProcessing100Wen\\Question11-20\\imori_noise.jpg")
+pic = cv2.imread("D:\\codeProject\\Python\\ImageProcessing100Wen\\Question11-20\\imori.jpg")
 result = motion_filter(pic)
 cv2.imshow('result',result)
 cv2.imwrite("D:\\codeProject\\Python\\ImageProcessing100Wen\\Question11-20\\answer12.jpg",result)
