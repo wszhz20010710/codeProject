@@ -11,7 +11,7 @@ def motion_filter(img, K_size = 3):
     
     # zero-padding
     pad = K_size // 2 #补0的圈数
-    out = np.zeros((H + pad * 2, W + pad *2, C),dtype=np.float32)
+    out = np.zeros((H + pad * 2, W + pad * 2, C),dtype=np.float32)
     out[pad:(pad+H),pad:(pad+W)] = img.copy().astype(np.float32)
     
     tmp = out.copy()
