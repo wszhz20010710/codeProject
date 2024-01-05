@@ -1,4 +1,4 @@
-# differential filter
+# prewitt filter
 import cv2
 import numpy as np
 
@@ -12,7 +12,7 @@ def BGR2GRAY(img):
     
     return out
 
-def differential_filter(img, K_size = 3):
+def prewitt_filter(img, K_size = 3):
     H,W = img.shape
     
     # zero-padding
@@ -26,8 +26,8 @@ def differential_filter(img, K_size = 3):
     out_h = out.copy()
     
     # kernel
-    Kv = [[0.,-1.,0.],[0.,1.,0.],[0.,0.,0.]]
-    Kh = [[0.,0.,0.],[-1.,1.,0.],[0.,0.,0.]]
+    Kv = [[-1.,-1.,-1.],[0.,0.,0.],[1.,1.,1.]]
+    Kh = [[-1.,0.,1.],[-1.,0.,1.],[-1.,0.,1.]]
     
     # filtering
     for x in range(H):
@@ -47,17 +47,17 @@ pic = cv2.imread("D:\\codeProject\\Python\\ImageProcessing100Wen\\Question11-20\
 gray = BGR2GRAY(pic)
 
 # different filtering
-out_v, out_h = differential_filter(gray, K_size=3)
+out_v, out_h = prewitt_filter(gray, K_size=3)
 
 # Save result
-cv2.imwrite("D:\\codeProject\\Python\\ImageProcessing100Wen\\Question11-20\\answer14v.jpg", out_v)
+cv2.imwrite("D:\\codeProject\\Python\\ImageProcessing100Wen\\Question11-20\\answer16v.jpg", out_v)
 cv2.imshow("result_v", out_v)
 while cv2.waitKey(100) != 27:# loop if not get ESC
     if cv2.getWindowProperty('result_v',cv2.WND_PROP_VISIBLE) <= 0:
         break
 cv2.destroyWindow('result_v')
 
-cv2.imwrite("D:\\codeProject\\Python\\ImageProcessing100Wen\\Question11-20\\answer14h.jpg", out_h)
+cv2.imwrite("D:\\codeProject\\Python\\ImageProcessing100Wen\\Question11-20\\answer16h.jpg", out_h)
 cv2.imshow("result_h", out_h)
 # loop if not get ESC or click x
 while cv2.waitKey(100) != 27:
