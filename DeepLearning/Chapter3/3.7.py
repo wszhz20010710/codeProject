@@ -24,3 +24,4 @@ if __name__ == "__main__":
     d2l.train_ch3(net, train_iter, test_iter, loss, num_epochs, trainer)
     d2l.predict_ch3(net, test_iter)
     d2l.plt.show()
+    # 1.24.3 0.17.0
