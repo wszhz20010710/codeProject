@@ -10,8 +10,9 @@
                 "${file}",
                 "-o",
                 "D:\\codeProject\\build",
+                "-fexec-charset=GBK",
                 "-I",
-                "E:\\VS\\vscode",
+                "F:\\C++",
                 "-std=c++17"
             ],
             "options": {
@@ -31,7 +32,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "D:\\codeProject\\build"
+                "D:\\codeProject\\build\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
