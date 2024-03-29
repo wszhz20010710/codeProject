@@ -5,14 +5,14 @@
             "name": "g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "E:\\codeProject\\build\\${fileBasenameNoExtension}.exe", /*收纳exe可执行文件*/
+            "program": "D:\\codeProject\\build", /*收纳exe可执行文件*/
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\mingw64\\bin\\gdb.exe", /*bin目录下的gdb.exe，两个反斜杠\\*/
+            "miDebuggerPath": "D:\\MinGW\\bin\\gdb.exe", /*bin目录下的gdb.exe，两个反斜杠\\*/
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
