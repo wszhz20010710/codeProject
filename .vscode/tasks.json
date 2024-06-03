@@ -9,7 +9,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "D:\\codeProject\\build",
+                "E:\\codeProject\\build",
                 "-fexec-charset=GBK",
                 "-I",
                 "F:\\C++",
@@ -32,7 +32,7 @@
                 "-g",
                 "${file}",
                 "-o",
-                "D:\\codeProject\\build\\${fileBasenameNoExtension}.exe"
+                "E:\\codeProject\\build\\${fileBasenameNoExtension}.exe"
             ],
             "options": {
                 "cwd": "${fileDirname}"
