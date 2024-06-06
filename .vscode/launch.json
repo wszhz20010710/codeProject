@@ -2,17 +2,24 @@
     "version": "0.2.0",
     "configurations": [
         {
+            "type": "java",
+            "name": "helloworld",
+            "request": "launch",
+            "mainClass": "JavaLearning.helloworld",
+            "projectName": "codeProject_bb84df2"
+        },
+        {
             "name": "g++.exe build and debug active file",
             "type": "cppdbg",
             "request": "launch",
-            "program": "E:\\codeProject\\build", /*收纳exe可执行文件*/
+            "program": "E:\\codeProject\\build",
             "args": [],
             "stopAtEntry": false,
             "cwd": "${workspaceFolder}",
             "environment": [],
             "externalConsole": true,
             "MIMode": "gdb",
-            "miDebuggerPath": "D:\\MinGW\\bin\\gdb.exe", /*bin目录下的gdb.exe，两个反斜杠\\*/
+            "miDebuggerPath": "D:\\MinGW\\bin\\gdb.exe",
             "setupCommands": [
                 {
                     "description": "为 gdb 启用整齐打印",
