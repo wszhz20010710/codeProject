@@ -4,6 +4,7 @@
         "ostream": "cpp",
         "typeindex": "cpp",
         "typeinfo": "cpp",
-        "iosfwd": "cpp"
+        "iosfwd": "cpp",
+        "string_view": "cpp"
     }
 }
