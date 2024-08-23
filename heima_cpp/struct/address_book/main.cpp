@@ -26,8 +26,8 @@ void add_contact(Contact * ptr);
 void show_contact(Contact * ptr);
 void delete_contact(Contact * ptr);
 void search_contact(Contact * ptr);
-void modify_contact();
-void delete_all();
+void modify_contact(Contact * ptr);
+void delete_all(Contact * ptr);
 int is_exist(Contact * ptr, string name);
 
 
@@ -56,11 +56,13 @@ int main()
                 delete_contact(&ptr);
                 break;
             case 4:
-            search_contact(&ptr);
+                search_contact(&ptr);
                 break;
             case 5:
+                modify_contact(&ptr);
                 break;
             case 6:
+                delete_all(&ptr);
                 break;
             case 0:
                 cout << "！！！欢迎下次使用！！！" << endl;
@@ -76,7 +78,6 @@ int main()
 
 void show_menu()
 {
-    cout << "************************" << endl;
     cout << "***** 1.添加联系人 *****" << endl;
     cout << "***** 2.显示联系人 *****" << endl;
     cout << "***** 3.删除联系人 *****" << endl;
@@ -84,7 +85,6 @@ void show_menu()
     cout << "***** 5.修改联系人 *****" << endl;
     cout << "***** 6.清空联系人 *****" << endl;
     cout << "***** 0.退出通讯录 *****" << endl;
-    cout << "************************" << endl;
 }
 
 void add_contact(Contact * ptr)
@@ -157,6 +157,7 @@ void add_contact(Contact * ptr)
             else
             {
                 cout << "输入有误，请重新输入！！！" << endl;
+
             }
         }
         
@@ -272,3 +273,112 @@ void search_contact(Contact * ptr)
     system("pause");
 }
 
+void modify_contact(Contact * ptr)
+{
+    cout << "请输入您想修改的联系人：" << endl;
+    string name;
+    cin >> name;
+
+    int res = is_exist(ptr, name);
+
+    if (res == -1)
+    {
+        cout << "查无此人，请重新输入！" << endl;
+        return;
+    }
+    else
+    {
+        cout << "现在开始修改。请输入对应数据！" << endl;
+        // 姓名
+        cout << "请输入姓名：" << endl;
+        string name;
+        cin >> name;
+        ptr->persons_array[res].name = name;
+        
+        // 性别
+        cout << "请输入性别：" << endl;
+        cout << "1————男" << endl;
+        cout << "2————女" << endl;
+        int gender = 0;
+        while (true)
+        {
+            cin >> gender;
+            if (gender == 1 || gender == 2)
+            {
+                ptr->persons_array[res].gender = gender;
+                break;
+            }
+            else
+            {
+                cout << "输入有误，请重新输入！！！" << endl;
+            }
+        }
+        
+        // 年龄
+        cout << "请输入年龄：" << endl;
+        int age = 0;
+        while (true)
+        {
+            cin >> age;
+            // 超出正常值的年龄判错
+            if (age >= 0 && age <= 120)
+            {
+                ptr->persons_array[res].age = age;
+                break;
+            }
+            else
+            {
+                cout << "输入有误，请重新输入！！！" << endl;
+            }
+            
+        }
+        
+        // 号码
+        cout << "请输入号码：" << endl;
+        string phone_number;
+        while (true)
+        {
+            cin >> phone_number;
+            if (phone_number.length() == 11)
+            {
+                ptr->persons_array[res].phone_number = phone_number;
+                break;
+            }
+            else
+            {
+                cout << "输入有误，请重新输入！！！" << endl;
+
+            }
+        }
+        
+        
+        // 地址
+        cout << "请输入地址：" << endl;
+        string address;
+        cin >> address;
+        ptr->persons_array[res].address = address;
+
+        cout << "修改成功！" << endl;
+        return;
+        system("pause");
+    }
+}
+
+void delete_all(Contact * ptr)
+{
+    cout << "是否确认清空通讯录？" << endl;
+    cout << "y/n" << endl;
+    string choice;
+    cin >> choice;
+
+    if (choice == "n")
+    {
+        return;
+    }
+    else
+    {
+        ptr->contact_size = 0;
+        cout << "通讯录已清空！" << endl;
+        return;
+    }
+}
