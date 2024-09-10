@@ -8,6 +8,16 @@ class Base
 public:
     static int m_A;
 
+    static void func()
+    {
+        cout << "Base-static void func()" << endl;
+    }
+
+    static void func(int a)
+    {
+        cout << "Base-static void func(int a)" << endl;
+    }
+
 };
 int Base::m_A = 100;
 
@@ -15,6 +25,12 @@ class Son : public Base
 {
 public:
     static int m_A;
+
+    static void func()
+    {
+        cout << "Son-static void func()" << endl;
+    }
+
 };
 int Son::m_A = 200;
 
@@ -35,9 +51,26 @@ void test01()
 
 }
 
+// 同名静态函数属性
+void test02()
+{
+    // 1.通过对象访问数据
+    Son s;
+    s.func();
+    s.Base::func();
+
+    // 2.通过类名访问数据
+    Son::func();
+    Son::Base::func();
+
+    Son::Base::func(100);
+}
+
 int main(){
 
-    test01();
+    //test01();
+    test02();
+
 
     system("pause");
     return 0;
