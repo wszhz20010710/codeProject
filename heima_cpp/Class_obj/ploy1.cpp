@@ -7,6 +7,8 @@ using namespace std;
 class Animal
 {
 public:
+    // 非静态函数和类分开存储，Animal是空类，size=1
+    // 加上virtual后，类内多了个虚指针，8字节，size=8
     virtual void speak()
     {
         cout << "Animal is speaking!" << endl;
@@ -48,9 +50,14 @@ void test01()
     DoSpeak(dog);
 }
 
+void test02()
+{
+    cout << "size of Animal = " << sizeof(Animal) << endl;
+}
+
 int main(){
 
-    test01(); // Animal is speaking!
+    test02(); // Animal is speaking!
 
     system("pause");
     return 0;
