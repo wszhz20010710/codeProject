@@ -50,4 +50,52 @@ STL初识
 ***
 2.5.2 vector存放自定义数据类型
 
+遍历法输出存放的数据
+***
+2.5.3 vector容器嵌套容器
 
+学习容器嵌套容器
+***
+***
+3 STL常用容器
+***
+3.1 string容器
+3.1.1 string基本概念
+
+string是cpp风格的字符串，本质上是一个类
+
+string内部封装了char*，是个char*型的容器
+char*是一个指针，是c风格的字符串
+
+特点：
+string内部封装了很多成员方法
+例如：查找find、拷贝copy、删除delete……
+***
+3.1.2 string的构造函数
+
+string();
+string(const char* s);
+string(const string& str);
+string(int n, char c);
+***
+3.1.2 string的赋值操作
+
+=赋值
+assign赋值
+***
+3.1.3 string的拼接操作
+
++=拼接
+append拼接
+***
+3.1.4 3.1.5 string的查找和替换
+
+find、rfind查找
+find从左往右 rfind从右往左
+replace 替换
+***
+3.1.6 string对比
+
+使用compare函数
+比较ASCII码，
+= 返回0        > 返回1       < 返回-1
