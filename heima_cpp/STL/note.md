@@ -99,3 +99,18 @@ replace 替换
 使用compare函数
 比较ASCII码，
 = 返回0        > 返回1       < 返回-1
+***
+3.1.7 string中的字符存取功能
+
+通过[]方式取字符
+    
+    char& operator[](int n)
+通过at方法取字符
+
+    char& at(int n)
+***
+3.1.8 string插入和删除
+
+insert 插入
+erase 删除
+***
